@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Obrigado! | Demonstração agendada</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <style>
+    :root{
+      --bg:#0b1220; --card:#0f1b33; --muted:#9bb0d1; --text:#e9f1ff;
+      --primary:#4da3ff; --primary2:#2ee59d; --border:rgba(255,255,255,.10);
+      --shadow: 0 12px 40px rgba(0,0,0,.35); --radius:16px; --max: 880px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background:
+        radial-gradient(1200px 600px at 20% -10%, rgba(77,163,255,.22), transparent 55%),
+        radial-gradient(900px 500px at 90% 10%, rgba(46,229,157,.18), transparent 55%),
+        var(--bg);
+      color:var(--text); line-height:1.5;
+      min-height:100vh; display:flex; align-items:center; justify-content:center;
+      padding: 22px;
+    }
+    .wrap{max-width:var(--max); width:100%;}
+    .card{
+      border:1px solid var(--border);
+      background: rgba(15,27,51,.88);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 22px;
+    }
+    h1{margin:0 0 10px; font-size: clamp(24px, 4vw, 36px); letter-spacing:-.4px;}
+    p{margin:0 0 14px; color: var(--muted); font-size: 16px;}
+    .cta{
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      padding:12px 14px; border-radius: 12px; font-weight:800;
+      border:1px solid var(--border); background: rgba(255,255,255,.06); color: var(--text);
+      text-decoration:none; transition:.18s ease; cursor:pointer;
+    }
+    .cta:hover{transform: translateY(-1px); background: rgba(255,255,255,.10);}
+    .cta.primary{border:none; background: linear-gradient(135deg, var(--primary), #2b74ff);}
+    .cta.whats{border:none; background: linear-gradient(135deg, var(--primary2), #0fbf86); color:#062015;}
+    .row{display:flex; gap:10px; flex-wrap:wrap; margin-top: 14px;}
+    .box{
+      margin-top:16px; padding:14px; border-radius: 14px;
+      border:1px solid var(--border); background: rgba(255,255,255,.04);
+      color: var(--muted);
+    }
+    .small{font-size: 13px; color: var(--muted); margin-top:12px;}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <h1>Recebido! ✅</h1>
+      <p>Obrigado pelo contato. Eu já recebi seus dados e vou retornar com um horário para a demonstração.</p>
+
+      <div class="box">
+        <b style="color:var(--text)">Quer acelerar?</b><br/>
+        Se preferir, me chame agora no WhatsApp e já combinamos o melhor horário.
+      </div>
+
+      <div class="row">
+        <a class="cta primary" href="/" aria-label="Voltar para a página inicial">Voltar para a página</a>
+        <a class="cta whats" id="whatsThanks" href="#" aria-label="Chamar no WhatsApp">Chamar no WhatsApp</a>
+      </div>
+
+      <div class="small">
+        Dica: se você não receber retorno em até 1 dia útil, chame no WhatsApp para garantir o agendamento.
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const WHATS_NUMBER = "5551996535458";
+    const WHATS_MSG = encodeURIComponent("Olá Daniel! Acabei de enviar o formulário da landing e gostaria de agendar a demonstração.");
+    document.getElementById("whatsThanks").href = `https://wa.me/${WHATS_NUMBER}?text=${WHATS_MSG}`;
+  </script>
+</body>
+</html>

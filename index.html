@@ -1,0 +1,608 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ERP Industrial | NF-e + MDF-e + Financeiro + Boletos + Antecipação</title>
+  <meta name="description" content="ERP para pequenas indústrias: NF-e e MDF-e, financeiro, boletos e antecipação de títulos integrados. Implantação (setup) + mensalidade. Agende uma demonstração." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://SEU_DOMINIO/" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="ERP Industrial: NF-e + MDF-e + Financeiro + Boletos + Antecipação" />
+  <meta property="og:description" content="Controle do faturamento ao dinheiro no caixa. Implantação estruturada + mensalidade. Agende uma demonstração." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://SEU_DOMINIO/" />
+  <!-- Se tiver uma imagem (ex: /og.jpg), descomente:
+  <meta property="og:image" content="https://SEU_DOMINIO/og.jpg" />
+  -->
+
+  <style>
+    :root{
+      --bg:#0b1220;
+      --card:#0f1b33;
+      --muted:#9bb0d1;
+      --text:#e9f1ff;
+      --primary:#4da3ff;
+      --primary2:#2ee59d;
+      --border:rgba(255,255,255,.10);
+      --shadow: 0 12px 40px rgba(0,0,0,.35);
+      --radius:16px;
+      --max: 1120px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
+      background:
+        radial-gradient(1200px 600px at 20% -10%, rgba(77,163,255,.22), transparent 55%),
+        radial-gradient(900px 500px at 90% 10%, rgba(46,229,157,.18), transparent 55%),
+        var(--bg);
+      color:var(--text);
+      line-height:1.5;
+    }
+    a{color:inherit;text-decoration:none}
+    .container{max-width:var(--max); margin:0 auto; padding:0 18px;}
+    .nav{
+      position:sticky; top:0; z-index:50;
+      background: rgba(11,18,32,.70);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:14px 0;
+    }
+    .brand{
+      display:flex; gap:10px; align-items:center; font-weight:700; letter-spacing:.2px;
+    }
+    .logo{
+      width:34px;height:34px;border-radius:10px;
+      background: linear-gradient(135deg, var(--primary), var(--primary2));
+      box-shadow: 0 10px 26px rgba(77,163,255,.18);
+    }
+    .nav-links{display:flex; gap:16px; align-items:center; color:var(--muted); font-weight:600;}
+    .nav-links a{padding:8px 10px; border-radius:10px;}
+    .nav-links a:hover{background: rgba(255,255,255,.06); color:var(--text);}
+    .cta{
+      display:inline-flex; align-items:center; justify-content:center;
+      gap:10px;
+      padding:12px 14px;
+      border-radius: 12px;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.06);
+      color: var(--text);
+      font-weight:800;
+      cursor:pointer;
+      transition: .18s ease;
+    }
+    .cta:hover{transform: translateY(-1px); background: rgba(255,255,255,.10);}
+    .cta.primary{
+      border:none;
+      background: linear-gradient(135deg, var(--primary), #2b74ff);
+      box-shadow: 0 16px 40px rgba(77,163,255,.22);
+    }
+    .cta.primary:hover{filter: brightness(1.05)}
+    .cta.whats{
+      border:none;
+      background: linear-gradient(135deg, var(--primary2), #0fbf86);
+      box-shadow: 0 16px 40px rgba(46,229,157,.18);
+      color:#062015;
+    }
+    .hero{
+      padding:52px 0 18px;
+    }
+    .hero-grid{
+      display:grid; gap:22px;
+      grid-template-columns: 1.15fr .85fr;
+      align-items:start;
+    }
+    .pill{
+      display:inline-flex; gap:10px; align-items:center;
+      padding:8px 12px;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.04);
+      border-radius: 999px;
+      color: var(--muted);
+      font-weight:700;
+      font-size: 13px;
+    }
+    h1{
+      margin:12px 0 10px;
+      font-size: clamp(28px, 4vw, 46px);
+      line-height: 1.1;
+      letter-spacing:-.6px;
+    }
+    .sub{
+      color: var(--muted);
+      font-size: 17px;
+      max-width: 60ch;
+    }
+    .hero-actions{
+      margin-top:18px;
+      display:flex; flex-wrap:wrap; gap:12px;
+      align-items:center;
+    }
+    .card{
+      border:1px solid var(--border);
+      background: rgba(15,27,51,.85);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .side-card{
+      padding:18px;
+    }
+    .side-title{font-weight:900; font-size: 16px; margin:0 0 10px;}
+    .bullets{margin:0; padding-left:18px; color: var(--muted)}
+    .bullets li{margin:8px 0}
+    .grid-3{
+      display:grid; gap:14px;
+      grid-template-columns: repeat(3, 1fr);
+    }
+    section{padding:28px 0}
+    .section-title{
+      font-size: 24px; font-weight:900;
+      margin:0 0 10px;
+      letter-spacing:-.3px;
+    }
+    .section-sub{
+      margin:0 0 18px;
+      color: var(--muted);
+      max-width: 78ch;
+    }
+    .feature{
+      padding:16px;
+    }
+    .kicker{color: var(--muted); font-weight:800; text-transform: uppercase; letter-spacing:.12em; font-size: 12px;}
+    .feature h3{margin:6px 0 8px; font-size: 18px}
+    .feature p{margin:0; color: var(--muted)}
+    .split{
+      display:grid; gap:16px;
+      grid-template-columns: 1fr 1fr;
+      align-items:start;
+    }
+    .callout{
+      padding:18px;
+      border-radius: var(--radius);
+      border:1px solid var(--border);
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+    }
+    .callout b{color: var(--text)}
+    .steps{
+      display:grid; gap:12px;
+    }
+    .step{
+      padding:14px 14px 14px 16px;
+      border-left: 3px solid rgba(77,163,255,.75);
+      background: rgba(255,255,255,.04);
+      border-radius: 12px;
+      border:1px solid var(--border);
+    }
+    .step .t{font-weight:900; margin-bottom:6px;}
+    .step .d{color:var(--muted); margin:0}
+    .form{
+      padding:18px;
+    }
+    label{display:block; font-weight:800; font-size: 13px; color: var(--muted); margin: 10px 0 6px;}
+    input, select, textarea{
+      width:100%;
+      padding:12px 12px;
+      border-radius: 12px;
+      border:1px solid var(--border);
+      background: rgba(0,0,0,.18);
+      color: var(--text);
+      outline:none;
+    }
+    textarea{min-height: 92px; resize: vertical;}
+    .form-row{
+      display:grid; gap:10px;
+      grid-template-columns: 1fr 1fr;
+    }
+    .form-actions{margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;}
+    .fine{color: var(--muted); font-size: 12px; margin-top:10px;}
+    .footer{
+      padding:28px 0 36px;
+      border-top:1px solid var(--border);
+      color: var(--muted);
+    }
+
+    @media (max-width: 920px){
+      .hero-grid{grid-template-columns: 1fr}
+      .grid-3{grid-template-columns: 1fr}
+      .split{grid-template-columns: 1fr}
+      .nav-links{display:none}
+      .form-row{grid-template-columns: 1fr}
+    }
+  </style>
+
+  <!-- JSON-LD básico -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "ERP Industrial",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Windows",
+    "description": "ERP para pequenas indústrias com NF-e/MDF-e, financeiro, boletos e antecipação de títulos integrados."
+  }
+  </script>
+</head>
+
+<body>
+  <header class="nav">
+    <div class="container">
+      <div class="nav-inner">
+        <div class="brand">
+          <div class="logo" aria-hidden="true"></div>
+          <div>Rodriza • ERP Industrial</div>
+        </div>
+
+        <nav class="nav-links" aria-label="Navegação">
+          <a href="#solucao">Solução</a>
+          <a href="#beneficios">Benefícios</a>
+          <a href="#como-funciona">Como funciona</a>
+          <a href="#contato">Contato</a>
+        </nav>
+
+        <a class="cta primary" href="#contato" data-cta="agendar-topo">Agendar demonstração</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div>
+            <div class="pill">NF-e + MDF-e • Financeiro • Boletos • Antecipação integrada</div>
+            <h1>Do faturamento ao dinheiro no caixa: ERP completo para pequenas indústrias.</h1>
+            <p class="sub">
+              Emita <b>NF-e e MDF-e</b>, controle o financeiro, gere boletos e antecipe títulos — tudo integrado em um único sistema.
+              <b>Implantação (setup) estruturada</b> + <b>mensalidade</b> com suporte e atualizações.
+            </p>
+
+            <div class="hero-actions">
+              <a class="cta primary" href="#contato" data-cta="agendar-hero">Agendar demonstração gratuita</a>
+              <a class="cta whats" id="whatsHero" href="#" data-cta="whats-hero">Falar no WhatsApp</a>
+              <a class="cta" href="#como-funciona" data-cta="ver-como">Ver como funciona</a>
+            </div>
+
+            <p class="fine">
+              Atendimento remoto • Ideal para moveleiras, metalúrgicas e pequenas fábricas.
+            </p>
+          </div>
+
+          <aside class="card side-card">
+            <p class="side-title">O que você resolve em 30 dias:</p>
+            <ul class="bullets">
+              <li>Integra faturamento (NF-e/MDF-e) com financeiro</li>
+              <li>Automatiza cobrança com boletos e baixas</li>
+              <li>Controla antecipação de títulos sem perder rastreabilidade</li>
+              <li>Melhora previsibilidade do fluxo de caixa</li>
+            </ul>
+
+            <div style="margin-top:14px" class="callout">
+              <b>Dica:</b> “Faturar não é receber. Receber não é lucrar.”
+              <div style="margin-top:8px; color:var(--muted)">A landing já trabalha essa mensagem para aumentar conversão.</div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- DOR -->
+    <section>
+      <div class="container">
+        <div class="card feature">
+          <div class="kicker">Realidade comum</div>
+          <h3>Sua empresa fatura… mas você tem controle real do caixa?</h3>
+          <p>
+            Em muitas indústrias, o faturamento está no sistema — e o financeiro “de verdade” fica em planilhas.
+            Isso gera retrabalho, erros e pouca previsibilidade. Crescer sem controle aumenta o risco.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOLUÇÃO -->
+    <section id="solucao">
+      <div class="container">
+        <h2 class="section-title">Uma solução pensada para a realidade da indústria</h2>
+        <p class="section-sub">
+          Tudo em um único ambiente: do documento fiscal ao recebimento e gestão de caixa.
+        </p>
+
+        <div class="grid-3">
+          <div class="card feature">
+            <div class="kicker">Faturamento</div>
+            <h3>NF-e e MDF-e</h3>
+            <p>Emissão e gestão do faturamento fiscal, com rotina alinhada à operação do dia a dia.</p>
+          </div>
+
+          <div class="card feature">
+            <div class="kicker">Financeiro</div>
+            <h3>Contas a pagar/receber</h3>
+            <p>Controle completo com fluxo de caixa projetado e relatórios para decisão.</p>
+          </div>
+
+          <div class="card feature">
+            <div class="kicker">Cobrança</div>
+            <h3>Boletos integrados</h3>
+            <p>Geração, controle e conciliação, reduzindo erros e dependência de planilhas.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DIFERENCIAL -->
+    <section>
+      <div class="container">
+        <div class="split">
+          <div class="card feature">
+            <div class="kicker">Diferencial</div>
+            <h3>Antecipação de títulos com controle total</h3>
+            <p>
+              Antecipar recebíveis é uma ferramenta de caixa — mas sem sistema vira bagunça.
+              Aqui você mantém rastreabilidade e segurança nas operações.
+            </p>
+            <ul class="bullets">
+              <li>Controle de títulos cedidos</li>
+              <li>Rastreabilidade completa</li>
+              <li>Neutralização automática no caixa (quando aplicável)</li>
+              <li>Relatórios claros para acompanhar impacto</li>
+            </ul>
+          </div>
+
+          <div class="callout">
+            <h3 style="margin:0 0 8px;">Mensagem-chave</h3>
+            <p style="margin:0; color:var(--muted)">
+              <b>Você antecipa quando precisa.</b><br/>
+              <b>O sistema mantém o controle.</b>
+            </p>
+            <div style="margin-top:12px" class="steps">
+              <div class="step">
+                <div class="t">Sem retrabalho</div>
+                <p class="d">Faturamento e financeiro conversam entre si — reduz erro e tempo gasto.</p>
+              </div>
+              <div class="step">
+                <div class="t">Mais previsibilidade</div>
+                <p class="d">Você enxerga o caixa com clareza para planejar compras e produção.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BENEFÍCIOS -->
+    <section id="beneficios">
+      <div class="container">
+        <h2 class="section-title">Resultado na prática</h2>
+        <p class="section-sub">
+          Benefícios que o dono/gestor percebe na rotina — e no final do mês.
+        </p>
+
+        <div class="grid-3">
+          <div class="card feature">
+            <h3>Previsibilidade de caixa</h3>
+            <p>Saiba quanto entra e quanto sai, com visão projetada para reduzir surpresa.</p>
+          </div>
+          <div class="card feature">
+            <h3>Menos erros</h3>
+            <p>Reduz duplicidade e falhas comuns quando o financeiro vive em planilhas.</p>
+          </div>
+          <div class="card feature">
+            <h3>Mais segurança fiscal</h3>
+            <p>Processo de faturamento mais consistente e integrado à gestão financeira.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PARA QUEM É + COMO FUNCIONA -->
+    <section id="como-funciona">
+      <div class="container">
+        <div class="split">
+          <div>
+            <h2 class="section-title">Ideal para</h2>
+            <p class="section-sub">
+              Pequenas indústrias que querem profissionalizar faturamento e financeiro sem depender de planilhas.
+            </p>
+            <div class="card feature">
+              <ul class="bullets">
+                <li>Indústrias moveleiras</li>
+                <li>Metalúrgicas</li>
+                <li>Pequenas fábricas</li>
+                <li>Empresas que faturam com boletos</li>
+                <li>Negócios que utilizam antecipação de recebíveis</li>
+              </ul>
+            </div>
+
+            <h2 class="section-title" style="margin-top:18px;">Como funciona a contratação</h2>
+            <p class="section-sub">Modelo claro: <b>setup</b> para implantar com segurança + <b>mensalidade</b> para operação e suporte.</p>
+
+            <div class="steps">
+              <div class="step">
+                <div class="t">Etapa 1 – Implantação (Setup)</div>
+                <p class="d">Configuração, parametrização fiscal, estruturação financeira e treinamento da equipe.</p>
+              </div>
+              <div class="step">
+                <div class="t">Etapa 2 – Mensalidade</div>
+                <p class="d">Uso completo do ERP, atualizações, suporte técnico e acompanhamento especializado.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card form" id="contato">
+            <div class="kicker">Demonstração</div>
+            <h3 style="margin:6px 0 8px;">Agende uma demonstração gratuita</h3>
+            <p style="margin:0 0 12px; color:var(--muted)">
+              Preencha abaixo e eu retorno com um horário. Se preferir, chame no WhatsApp.
+            </p>
+
+            <!-- Formspree: crie em https://formspree.io e substitua o action -->
+<form id="leadForm" method="POST" action="https://formspree.io/f/maqdbbyo">
+  <input type="hidden" name="_subject" value="Novo Lead - ERP Industrial">
+  <input type="hidden" name="_replyto" value="daniel+agenda@rodriza.com.br">
+  <input type="hidden" name="_captcha" value="false">
+  <input type="hidden" name="_redirect" value="/obrigado.html">
+
+
+  <div class="form-row">
+    <div>
+      <label for="nome">Nome</label>
+      <input id="nome" name="Nome" required placeholder="Seu nome completo" />
+    </div>
+    <div>
+      <label for="empresa">Empresa</label>
+      <input id="empresa" name="Empresa" required placeholder="Nome da empresa" />
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div>
+      <label for="telefone">Telefone/WhatsApp</label>
+      <input id="telefone" name="Telefone" required placeholder="(51) 99999-9999" />
+    </div>
+    <div>
+      <label for="segmento">Segmento</label>
+      <select id="segmento" name="Segmento" required>
+        <option value="">Selecione…</option>
+        <option>Moveleira</option>
+        <option>Metalúrgica</option>
+        <option>Outra indústria</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div>
+      <label for="usaErp">Usa ERP atualmente?</label>
+      <select id="usaErp" name="Usa ERP" required>
+        <option value="">Selecione…</option>
+        <option>Sim</option>
+        <option>Não</option>
+      </select>
+    </div>
+    <div>
+      <label for="faturamento">Faturamento mensal (faixa)</label>
+      <select id="faturamento" name="Faturamento mensal" required>
+        <option value="">Selecione…</option>
+        <option>Até R$ 50 mil</option>
+        <option>R$ 50 mil a R$ 200 mil</option>
+        <option>R$ 200 mil a R$ 500 mil</option>
+        <option>Acima de R$ 500 mil</option>
+      </select>
+    </div>
+  </div>
+
+  <label for="mensagem">Mensagem (opcional)</label>
+  <textarea id="mensagem" name="Mensagem" placeholder="Ex: preciso integrar faturamento e antecipação"></textarea>
+
+  <div class="form-actions">
+    <button class="cta primary" type="submit">
+      Enviar
+    </button>
+  </div>
+
+  <p class="fine">
+    Ao enviar, você concorda em ser contatado para agendamento da demonstração.
+  </p>
+
+</form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOBRE -->
+    <section>
+      <div class="container">
+        <div class="card feature">
+          <div class="kicker">Quem está por trás</div>
+          <h3>Rodriza Assessoria e Treinamento</h3>
+          <p>
+            Soluções práticas para pequenas e médias indústrias, com foco em organização, controle e segurança operacional.
+            Desenvolvimento e implantação com acompanhamento técnico.
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div style="display:flex; gap:10px; align-items:center; justify-content:space-between; flex-wrap:wrap;">
+        <div>© <span id="year"></span> Rodriza • ERP Industrial</div>
+        <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+          <a class="cta" href="#contato">Agendar demo</a>
+          <a class="cta" id="whatsFooter" href="#">WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // ======== CONFIGURAÇÕES ========
+    const WHATS_NUMBER = "5551996535458"; // ex: 5551996535458
+    const WHATS_MSG = encodeURIComponent(
+      "Olá! Vi a página do ERP Industrial (NF-e/MDF-e + financeiro + boletos + antecipação) e gostaria de agendar uma demonstração."
+    );
+
+    // Monta link do WhatsApp
+    function buildWhatsLink(){
+      return `https://wa.me/${WHATS_NUMBER}?text=${WHATS_MSG}`;
+    }
+
+    // UTM capture
+    function getParam(name){
+      const url = new URL(window.location.href);
+      return url.searchParams.get(name) || "";
+    }
+    function setUtmHidden(){
+      const keys = ["utm_source","utm_medium","utm_campaign","utm_term","utm_content"];
+      keys.forEach(k => {
+        const el = document.getElementById(k);
+        if(el) el.value = getParam(k);
+      });
+    }
+
+    // Simples "event tracking" (você depois liga no GA4/Ads)
+    function track(eventName, data){
+      // Placeholder: conecte depois em gtag('event', ...)
+      // console.log("track", eventName, data || {});
+    }
+
+    // Apply Whats links
+    function wireWhats(){
+      const link = buildWhatsLink();
+      ["whatsHero","whatsForm","whatsFooter"].forEach(id=>{
+        const el = document.getElementById(id);
+        if(el) el.href = link;
+      });
+    }
+
+    // CTA tracking
+    document.addEventListener("click", (e)=>{
+      const t = e.target.closest("[data-cta]");
+      if(!t) return;
+      track("cta_click", { cta: t.getAttribute("data-cta") });
+    });
+
+    // Form submit tracking
+    const form = document.getElementById("leadForm");
+    if(form){
+      form.addEventListener("submit", ()=>{
+        track("lead_submit", { source: "landing_form" });
+      });
+    }
+
+    // init
+    document.getElementById("year").textContent = new Date().getFullYear();
+    setUtmHidden();
+    wireWhats();
+  </script>
+</body>
+</html>
