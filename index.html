@@ -445,7 +445,6 @@
             <!-- Formspree: crie em https://formspree.io e substitua o action -->
 
 <form id="leadForm" action="https://formspree.io/f/maqdbbyo" method="POST">
-  <input type="hidden" name="_redirect" value="https://landing-erp-industrial.vercel.app/obrigado.html">
   <input type="hidden" name="_subject" value="Novo Lead - ERP Industrial">
   <input type="hidden" name="_replyto" value="daniel+agenda@rodriza.com.br">
   <input type="hidden" name="_captcha" value="false">
@@ -608,28 +607,52 @@
   </script>
 
 <script>
-  const form = document.getElementById("leadForm");
-  form.addEventListener("submit", async (e) => {
-    e.preventDefault();
+  (function () {
+    const form = document.getElementById("leadForm");
+    if (!form) return;
 
-    const data = new FormData(form);
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
 
-    const res = await fetch(form.action, {
-      method: "POST",
-      body: data,
-      headers: { "Accept": "application/json" }
+      const btn = form.querySelector('button[type="submit"]');
+      const oldText = btn ? btn.textContent : null;
+      if (btn) { btn.disabled = true; btn.textContent = "Enviando..."; }
+
+      try {
+        const data = new FormData(form);
+
+        const res = await fetch(form.action, {
+          method: "POST",
+          body: data,
+          headers: { "Accept": "application/json" }
+        });
+
+        if (res.ok) {
+          window.location.href = "/obrigado.html";
+          return;
+        }
+
+        // Se não ok, tenta ler o erro (quando disponível)
+        let msg = "Não foi possível enviar agora. Tente novamente ou chame no WhatsApp.";
+        try {
+          const j = await res.json();
+          if (j && j.errors && j.errors.length) msg = j.errors[0].message || msg;
+        } catch (_) {}
+
+        alert(msg);
+      } catch (err) {
+        alert("Falha de rede ao enviar. Verifique sua internet e tente novamente.");
+      } finally {
+        if (btn) { btn.disabled = false; btn.textContent = oldText; }
+      }
     });
-
-    if (res.ok) {
-      window.location.href = "/obrigado.html";
-    } else {
-      alert("Não foi possível enviar agora. Tente novamente ou chame no WhatsApp.");
-    }
-  });
+  })();
 </script>
+
   
 </body>
 </html>
+
 
 
 
